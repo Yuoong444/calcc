@@ -7,15 +7,23 @@
         function calculate() {
             var inputText1 = document.getElementById('inputText1').value;
             var inputText2 = document.getElementById('inputText2').value;
+            var inputText3 = document.getElementById('inputText3').value;
 
-            var result1 = eval(inputText2*0.055);
+
+            var result0 = eval(inputText1*inputText3);
+
+            var result1 = Math.round(eval(inputText2*0.055));
+
             var result11 = Math.round(result1);
+
             var result2 = eval(inputText2-result11);
-            var result3 = eval(result2-inputText1);
+            var result3 = eval(result2-result0);
 
             document.getElementById('result1').innerHTML = result1;
             document.getElementById('result2').innerHTML = result2;
             document.getElementById('result3').innerHTML = result3;
+
+            document.getElementById('result0').innerHTML = result0;
 
         }
 
@@ -23,7 +31,7 @@
     </script>
 </head>
 <body>
-    <h1>계산기</h1>
+    <h1>내판가 계산기</h1>
 
 
 
@@ -35,6 +43,18 @@
 <tr style="height: 18px;">
 <td style="width: 100%; height: 18px;">내판가</td>
 <td style="width: 100%; height: 18px;">    <input type="number" id="inputText1" placeholder="내판가 입력" style="text-align:right;"></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 100%; height: 18px;">판매수량</td>
+<td style="width: 100%; height: 18px;">    <input type="number" id="inputText3" placeholder="판매수량 입력" style="text-align:right;"></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 100%; height: 18px;">판매 금액</td>
+<td style="width: 100%; height: 18px; text-align:right;" id="result0"></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 100%; height: 18px;"></td>
+<td style="width: 100%; height: 18px;"> </td>
 </tr>
 <tr style="height: 18px;">
 <td style="width: 100%; height: 18px;">거래소 등록 금액</td>
@@ -64,7 +84,7 @@
 </table>
 </br> </br>
 <button style = "width: 100%; max-width:720px; " onclick="calculate()"></br>계산</br></button>
-</br>
+</br></br></br>
    made by 유웅 . 수정요청은 일괄로 취합해서 주세요 ^^
 
 
