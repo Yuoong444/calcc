@@ -4,6 +4,11 @@
     <title>계산기</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
+
+		function numberWithCommas(x) {
+			  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		}
+
         function calculate() {
             var inputText1 = document.getElementById('inputText1').value;
             var inputText2 = document.getElementById('inputText2').value;
@@ -19,16 +24,28 @@
             var result2 = eval(inputText2-result11);
             var result3 = eval(result2-result0);
 
-            document.getElementById('result1').innerHTML = result1;
-            document.getElementById('result2').innerHTML = result2;
-            document.getElementById('result3').innerHTML = result3;
 
-            document.getElementById('result0').innerHTML = result0;
+			var formattedNumber1 = numberWithCommas(result0);
+			var formattedNumber2 = numberWithCommas(result1);
+			var formattedNumber3 = numberWithCommas(result11);
+			var formattedNumber4 = numberWithCommas(result2);
+			var formattedNumber5 = numberWithCommas(result3);
+
+
+            document.getElementById('result1').innerHTML = formattedNumber2;
+            document.getElementById('result2').innerHTML = formattedNumber4;
+            document.getElementById('result3').innerHTML = formattedNumber5;
+
+            document.getElementById('result0').innerHTML = formattedNumber1;
 
         }
 
 
     </script>
+
+
+
+
 </head>
 <body>
     <h1>내판가 계산기</h1>
