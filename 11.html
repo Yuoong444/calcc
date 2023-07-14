@@ -9,7 +9,8 @@
             var inputText2 = document.getElementById('inputText2').value;
 
             var result1 = eval(inputText2*0.055);
-            var result2 = eval(inputText2-result1);
+            var result11 = Math.round(result1);
+            var result2 = eval(inputText2-result11);
             var result3 = eval(result2-inputText1);
 
             document.getElementById('result1').innerHTML = result1;
